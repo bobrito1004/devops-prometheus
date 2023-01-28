@@ -1,4 +1,6 @@
 ---
+- name: add prometheus repo
+  ansible.builtin.shell: echo 'deb http://deb.robustperception.io/ precise nightly' > /etc/apt/sources.list  && wget https://s3-eu-west-1.amazonaws.com/deb.robustperception.io/41EFC99D.gpg && sudo apt-key add 41EFC99D.gpg && sudo apt-get update
 - name: install packages
   apt:
     name:
